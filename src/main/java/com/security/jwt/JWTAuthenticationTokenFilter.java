@@ -20,7 +20,7 @@ import org.springframework.util.StringUtils;
 
 import com.alibaba.fastjson.JSONObject;
 import com.security.config.JWTConfig;
-import com.security.entity.SelfUserEntity;
+import com.security.entity.model.SelfUserModel;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -65,7 +65,7 @@ public class JWTAuthenticationTokenFilter extends BasicAuthenticationFilter{
                         }
                     }
                     //组装参数
-                    SelfUserEntity selfUserEntity = new SelfUserEntity();
+                    SelfUserModel selfUserEntity = new SelfUserModel();
                     selfUserEntity.setUsername(claims.getSubject());
                     selfUserEntity.setUserId(Long.parseLong(claims.getId()));
                     selfUserEntity.setAuthorities(authorities);

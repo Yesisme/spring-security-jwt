@@ -2,14 +2,14 @@ package com.security.util;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import com.security.entity.SelfUserEntity;
+import com.security.entity.model.SelfUserModel;
 
 public class SecurityUtil {
 	
 	private SecurityUtil() {}
 	
-	public static SelfUserEntity getUserInfo() {
-		SelfUserEntity selfUserEntity = (SelfUserEntity) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	public static SelfUserModel getUserInfo() {
+		SelfUserModel selfUserEntity = (SelfUserModel) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		return selfUserEntity;
 	}
 	

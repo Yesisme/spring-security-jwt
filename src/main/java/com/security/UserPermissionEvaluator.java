@@ -10,8 +10,8 @@ import org.springframework.security.access.PermissionEvaluator;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
-import com.security.entity.SelfUserEntity;
-import com.security.entity.Po.SysMenuPO;
+import com.security.entity.model.SelfUserModel;
+import com.security.entity.po.SysMenuPO;
 import com.security.service.SysUserService;
 // 自定义权限注解验证
 @Component
@@ -34,7 +34,7 @@ public class UserPermissionEvaluator implements PermissionEvaluator{
 	@Override
 	public boolean hasPermission(Authentication authentication, Object targetDomainObject, Object permission) {
 		//用户信息
-		SelfUserEntity selfUserEntity = (SelfUserEntity) authentication.getPrincipal();
+		SelfUserModel selfUserEntity = (SelfUserModel) authentication.getPrincipal();
 		
 		Set<String> permissions = new HashSet<String>();
 		List<SysMenuPO> sysMenuList = sysUserService.selectSysMenuByUserId(selfUserEntity.getUserId());

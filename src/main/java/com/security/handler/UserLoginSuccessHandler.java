@@ -13,7 +13,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import org.springframework.stereotype.Component;
 
 import com.security.config.JWTConfig;
-import com.security.entity.SelfUserEntity;
+import com.security.entity.model.SelfUserModel;
 import com.security.util.JWTTokenUtil;
 import com.security.util.ResultUtil;
 //登录成功处理类
@@ -23,7 +23,7 @@ public class UserLoginSuccessHandler implements AuthenticationSuccessHandler{
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 			Authentication authentication) throws IOException, ServletException {
-		SelfUserEntity selfUserEntity = (SelfUserEntity)authentication.getPrincipal();
+		SelfUserModel selfUserEntity = (SelfUserModel)authentication.getPrincipal();
 		String token = JWTConfig.tokenPrefix+JWTTokenUtil.createAccessToken(selfUserEntity);
 		Map<String,Object> resultData = new HashMap<>();
 	    resultData.put("code","200");

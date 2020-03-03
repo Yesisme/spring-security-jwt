@@ -11,6 +11,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.Application;
 import com.alibaba.fastjson.JSON;
+import com.security.entity.po.SysMenuPO;
+import com.security.entity.po.SysRolePO;
+import com.security.entity.po.SysUserPO;
 import com.security.mapper.SysMenuMapper;
 import com.security.mapper.SysRoleMapper;
 import com.security.mapper.SysUserMapper;
@@ -58,5 +61,16 @@ public class PoTest {
 		List<SysMenuPO> sysMenuList = sysMenuMapper.selectAll();
 		Assert.assertTrue(sysMenuList.size()>0);
 		sysMenuList.stream().forEach(sysUser->System.out.println(JSON.toJSONString(sysUser)));	
+	}
+	
+	@Test
+	public void testDbType() {
+		SysUserPO user = new SysUserPO();
+		user.setUsername("lym");
+		user.setPassword("$2a$10$szHoqQ64g66PymVJkip98.Fap21Csy8w.RD8v5Dhq08BMEZ9KaSmS");
+		user.setStatus("NORMAL");
+		sysUserMapper.insert(user);
+		SysUserPO selectByPrimaryKey = sysUserMapper.selectByPrimaryKey(7L);
+		log.info("[{}]",JSON.toJSONString(selectByPrimaryKey));
 	}
 }

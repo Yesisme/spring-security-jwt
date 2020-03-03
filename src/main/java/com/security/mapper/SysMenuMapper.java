@@ -2,7 +2,7 @@ package com.security.mapper;
 
 import java.util.List;
 
-import com.security.entity.Po.SysMenuPO;
+import com.security.entity.po.SysMenuPO;
 
 import tk.mybatis.mapper.common.BaseMapper;
 

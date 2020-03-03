@@ -2,7 +2,7 @@ package com.security.service;
 
 import java.util.List;
 
-import com.security.entity.Po.SysMenuPO;
+import com.security.entity.po.SysMenuPO;
 
 public interface SysMenuService {
 	

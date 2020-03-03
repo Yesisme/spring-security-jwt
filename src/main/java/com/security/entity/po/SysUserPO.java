@@ -1,4 +1,4 @@
-package com.security.entity.Po;
+package com.security.entity.po;
 
 import java.io.Serializable;
 

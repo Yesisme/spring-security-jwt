@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.security.entity.SelfUserEntity;
-import com.security.entity.Po.SysMenuPO;
-import com.security.entity.Po.SysRolePO;
-import com.security.entity.Po.SysUserPO;
+import com.security.entity.model.SelfUserModel;
+import com.security.entity.po.SysMenuPO;
+import com.security.entity.po.SysRolePO;
+import com.security.entity.po.SysUserPO;
 import com.security.service.SysMenuService;
 import com.security.service.SysRoleService;
 import com.security.service.SysUserService;
@@ -43,7 +43,7 @@ public class AdminController {
 	@RequestMapping(value = "/info", method = RequestMethod.GET)
 	public Map<String, Object> userLogin() {
 		Map<String, Object> result = new HashMap<>();
-		SelfUserEntity userDetails = SecurityUtil.getUserInfo();
+		SelfUserModel userDetails = SecurityUtil.getUserInfo();
 		result.put("title", "管理端信息");
 		result.put("data", userDetails);
 		return ResultUtil.resultSuccess(result);

@@ -6,8 +6,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import com.security.entity.SelfUserEntity;
-import com.security.entity.Po.SysUserPO;
+import com.security.entity.model.SelfUserModel;
+import com.security.entity.po.SysUserPO;
 import com.security.service.SysUserService;
 
 @Component
@@ -17,10 +17,10 @@ public class SelfUserDetailsService implements UserDetailsService{
 	private SysUserService sysUserService;
 	
 	@Override
-	public SelfUserEntity loadUserByUsername(String userName) throws UsernameNotFoundException {
+	public SelfUserModel loadUserByUsername(String userName) throws UsernameNotFoundException {
 		SysUserPO sysUserPO = sysUserService.selectByUserName(userName);
 		if(sysUserPO!=null) {
-			SelfUserEntity selfUserEntity = new SelfUserEntity();
+			SelfUserModel selfUserEntity = new SelfUserModel();
 			BeanUtils.copyProperties(sysUserPO, selfUserEntity);
 			return selfUserEntity;
 		}

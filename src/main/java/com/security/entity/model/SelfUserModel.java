@@ -1,4 +1,4 @@
-package com.security.entity;
+package com.security.entity.model;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import lombok.Data;
 
 @Data
-public class SelfUserEntity implements Serializable,UserDetails{
+public class SelfUserModel implements Serializable,UserDetails{
 
 	
 	private static final long serialVersionUID = 1L;

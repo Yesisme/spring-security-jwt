@@ -4,14 +4,14 @@ import java.util.Date;
 
 import com.alibaba.fastjson.JSON;
 import com.security.config.JWTConfig;
-import com.security.entity.SelfUserEntity;
+import com.security.entity.model.SelfUserModel;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 public class JWTTokenUtil {
 	
-	public static String createAccessToken(SelfUserEntity selfUserEntity) {
+	public static String createAccessToken(SelfUserModel selfUserEntity) {
 		String token = Jwts.builder()
 				//用户ID
 				.setId(selfUserEntity.getUserId()+"")

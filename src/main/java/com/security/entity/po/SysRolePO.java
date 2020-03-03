@@ -1,4 +1,4 @@
-package com.security.entity.Po;
+package com.security.entity.po;
 
 import java.io.Serializable;
 
@@ -9,22 +9,17 @@ import javax.persistence.Table;
 
 import lombok.Data;
 
-@Table(name="sys_menu")
+@Table(name="sys_role")
 @Data
-public class SysMenuPO implements Serializable{
+public class SysRolePO implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long menuId;
+	private Long roleId;
 	/**
-	 * 权限名称
+	 * 角色名称
 	 */
-	private String name;
-	/**
-	 * 权限标识
-	 */
-	private String permission;
-
+	private String roleName;
 }

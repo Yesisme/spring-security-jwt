@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
-import com.security.entity.Po.SysRolePO;
+import com.security.entity.po.SysRolePO;
 
 import tk.mybatis.mapper.common.BaseMapper;
 

@@ -17,8 +17,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import com.security.entity.SelfUserEntity;
-import com.security.entity.Po.SysRolePO;
+import com.security.entity.model.SelfUserModel;
+import com.security.entity.po.SysRolePO;
 import com.security.service.SysUserService;
 import com.security.service.impl.SelfUserDetailsService;
 
@@ -40,7 +40,7 @@ public class UserAuthenticationProvider implements AuthenticationProvider{
         // 获取表单中输入的密码
 		String password = (String) authentication.getPrincipal();
         // 查询用户是否存在
-		SelfUserEntity userNameInDB = selfUserDetailsService.loadUserByUsername(userName);
+		SelfUserModel userNameInDB = selfUserDetailsService.loadUserByUsername(userName);
 		if(userNameInDB==null) {
 			throw new UsernameNotFoundException("用户名不存在");
 		}

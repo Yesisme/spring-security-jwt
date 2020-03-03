@@ -3,7 +3,7 @@ package com.security.mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
-import com.security.entity.Po.SysUserPO;
+import com.security.entity.po.SysUserPO;
 
 import tk.mybatis.mapper.common.BaseMapper;
 

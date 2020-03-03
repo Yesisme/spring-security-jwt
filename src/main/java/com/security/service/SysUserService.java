@@ -2,9 +2,9 @@ package com.security.service;
 
 import java.util.List;
 
-import com.security.entity.Po.SysMenuPO;
-import com.security.entity.Po.SysRolePO;
-import com.security.entity.Po.SysUserPO;
+import com.security.entity.po.SysMenuPO;
+import com.security.entity.po.SysRolePO;
+import com.security.entity.po.SysUserPO;
 
 public interface SysUserService {
 

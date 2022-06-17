@@ -20,7 +20,7 @@
         <java.version>1.8</java.version>
         <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
         <java-jwt-verson>3.4.0</java-jwt-verson>
-        <fastjson-version>1.2.47</fastjson-version>
+        <fastjson-version>1.2.83</fastjson-version>
         <druid-version>1.1.10</druid-version>
         <tk-mybatis-version>1.2.4</tk-mybatis-version>
         <spring-security-jwt-version>1.0.9.RELEASE</spring-security-jwt-version>
